@@ -13,6 +13,7 @@ def process_performance(fname):
     perf.index = perf.index.normalize()
     return perf
 
+#%%
 # for Pyfolio, create a benchmark to compare for the graphs
 def create_benchmark(fname):
     # benchmark_rets (pd.Series, optional) -- Daily noncumulative returns of the benchmark. This is in the same style as returns.
@@ -22,6 +23,7 @@ def create_benchmark(fname):
     bench_series.rename(fname, inplace=True)
     return bench_series
 
+#%%
 # Use PyFolio to generate a performance report - benchmark_rets is optional
 def analyze(perfdata, benchdata):
     returns, positions, transactions = pf.utils.extract_rets_pos_txn_from_zipline(perfdata)
